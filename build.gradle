@@ -1,0 +1,79 @@
+plugins {
+	id 'org.springframework.boot' version '2.6.6'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'org.asciidoctor.convert' version '1.5.8'
+	id 'java'
+	id 'war'
+	id 'jacoco'
+	id 'jacoco-report-aggregation'
+}
+
+group = 'com.meli.mutant'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '8'
+
+repositories {
+	mavenCentral()
+}
+
+ext {
+	set('snippetsDir', file("build/generated-snippets"))
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-data-jdbc'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-web-services'
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	runtimeOnly 'org.postgresql:postgresql'
+	providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'org.springframework.restdocs:spring-restdocs-mockmvc'
+	//testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    //testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+    testImplementation 'org.hamcrest:hamcrest-core:1.3'
+    testImplementation 'junit:junit-dep:4.10'
+    testImplementation 'org.hamcrest:hamcrest-library:1.3'
+    testImplementation 'org.mockito:mockito-core:1.9.+'
+}
+
+/*
+tasks.named('test') {
+	outputs.dir snippetsDir
+	useJUnitPlatform()
+}
+*/
+jacoco {
+    toolVersion = "0.8.5" //jacoco version
+    reportsDir = file("$buildDir/reports/jacoco") //default directory where jacoco generates test reports
+    
+}
+tasks.named('test') {
+     outputs.dir snippetsDir
+     useJUnitPlatform()
+     //dependsOn tasks.named('testCodeCoverageReport', JacocoReport)
+    //ignoreFailures = true
+    finalizedBy jacocoTestReport // report is always generated after tests run
+   
+}
+
+
+jacocoTestReport {
+    dependsOn test // tests are required to run before generating the report
+}
+
+/*
+reporting {
+    reports {
+        testCodeCoverageReport(JacocoCoverageReport) { 
+            testType = TestSuiteType.UNIT_TEST
+        }
+    }
+}
+
+*/
+tasks.named('asciidoctor') {
+	inputs.dir snippetsDir
+	dependsOn test
+}
