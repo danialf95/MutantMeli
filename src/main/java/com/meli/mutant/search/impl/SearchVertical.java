@@ -8,18 +8,18 @@ import com.meli.mutant.services.ISearch;
 public class SearchVertical implements ISearch{
 
 	@Override
-	public boolean search(char caracter, Vector<char[]> data, int i, int j, Direction dir, Integer Coincidence,
+	public boolean search(char caracter, Vector<char[]> data, int i, int j, Direction dir, Integer coincidence,
 			Integer minCoincidence) {
 		 try {
 				if(caracter==data.get(i)[j]){
-		            	Coincidence++;
-		            	if(minCoincidence==Coincidence) {
+		            	coincidence++;
+		            	if(minCoincidence.equals(coincidence)) {
 		            		return true;
 		            	}else {
 		            		if(dir.getValue()==2) //UP
-		            		return this.search(caracter, data, i-1, j, dir, Coincidence, minCoincidence);
+		            		return this.search(caracter, data, i-1, j, dir, coincidence, minCoincidence);
 		            		if(dir.getValue()==7) //DOWN
-		            		return this.search(caracter, data, i+1, j, dir, Coincidence, minCoincidence);
+		            		return this.search(caracter, data, i+1, j, dir, coincidence, minCoincidence);
 		            	}	
 				     } else {
 				    	  return false; 
