@@ -8,7 +8,7 @@ plugins {
 	id "org.sonarqube" version "3.3"
 	id 'com.github.nbaztec.coveralls-jacoco' version '1.2.14'
 }
-
+apply plugin: 'jacoco'
 group = 'com.meli.mutant'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '8'
@@ -57,8 +57,15 @@ coveralls {
 coverallsJacoco {
   reportPath = "${buildDir}/reports/jacoco/report.xml"
 }
+jacocoTestReport {
+    dependsOn test // tests are required to run before generating the report
+    reports{
+         xml.enabled true
+         xml.destination file("${buildDir}/reports/jacoco/report.xml")
+       }
+}
 
-tasks.named('test') {
+test{
      outputs.dir snippetsDir
      useJUnitPlatform()
      //dependsOn tasks.named('testCodeCoverageReport', JacocoReport)
@@ -68,15 +75,9 @@ tasks.named('test') {
 }
 
 
-jacocoTestReport {
-    dependsOn test // tests are required to run before generating the report
-    reports{
-         xml.enabled true
-         xml.destination file("${buildDir}/reports/jacoco/report.xml")
-       }
-}
+
 tasks.coverallsJacoco {
-  dependsOn 'jacocoTestReport' // tests are required to run before generating the report
+  dependsOn test // tests are required to run before generating the report
 }
 
 sonarqube {
@@ -89,7 +90,7 @@ sonarqube {
 }
 
 tasks.sonarqube { 
-  dependsOn 'jacocoTestReport' // tests are required to run before generating the report
+  dependsOn test // tests are required to run before generating the report
 }
 /*
 tasks.named('asciidoctor') {
