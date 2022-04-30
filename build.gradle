@@ -56,7 +56,7 @@ coveralls {
 }
 */
 coverallsJacoco {
-  reportPath = "build/reports/jacoco/report.xml"
+  reportPath = "${project.buildDir}/build/reports/jacoco/report.xml"
 }
 
 tasks.named('test') {
