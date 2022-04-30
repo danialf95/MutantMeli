@@ -12,8 +12,6 @@ import com.meli.mutant.enums.Direction;
 @SpringBootTest(classes=PruebaApplication.class)
 public class TestEnums {
 
-	
-	
 	@Test
 	public void testEnums()
 	{
