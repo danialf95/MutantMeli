@@ -47,7 +47,7 @@ tasks.named('test') {
 */
 jacoco {
     toolVersion = "0.8.5" //jacoco version
-    reportsDir = file("$buildDir/reports/jacoco") //default directory where jacoco generates test reports  
+    reportsDir = file("build/reports/jacoco") //default directory where jacoco generates test reports  
 }
 /*
 coveralls {
@@ -55,13 +55,13 @@ coveralls {
 }
 */
 coverallsJacoco {
-  reportPath = "${buildDir}/reports/jacoco/report.xml"
+  reportPath = "build/reports/jacoco/report.xml"
 }
 jacocoTestReport {
     dependsOn test // tests are required to run before generating the report
     reports{
          xml.enabled true
-         xml.destination file("${buildDir}/reports/jacoco/report.xml")
+         xml.destination file("build/reports/jacoco/report.xml")
        }
 }
 
@@ -85,7 +85,7 @@ sonarqube {
     property "sonar.projectKey", "danialf95_MutantMeli"
     property "sonar.organization", "danialf95"
     property "sonar.host.url", "https://sonarcloud.io"
-    property "sonar.coverage.jacoco.xmlReportPaths","${buildDir}/reports/jacoco/report.xml"
+    property "sonar.coverage.jacoco.xmlReportPaths","build/reports/jacoco/report.xml"
   }
 }
 
