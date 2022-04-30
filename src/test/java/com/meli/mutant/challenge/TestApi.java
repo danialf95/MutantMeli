@@ -5,13 +5,14 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import com.meli.mutant.api.ApiRestController;
 import com.meli.mutant.request.RequestData;
 
 import junit.framework.Assert;
-@RunWith(SpringRunner.class)
+@RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = PruebaApplication.class)
 @SpringBootTest(classes = {PruebaApplicationTests.class})
 public class TestApi {

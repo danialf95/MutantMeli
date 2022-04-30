@@ -6,11 +6,12 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import com.meli.mutant.controller.MutantStatsController;
 import com.meli.mutant.response.ResponseStatsData;
-@RunWith(SpringRunner.class)
+@RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = PruebaApplication.class)
 @SpringBootTest(classes = {PruebaApplication.class})
 public class TestStatistics {
