@@ -6,7 +6,6 @@ plugins {
 	id 'war'
 	id 'jacoco'
 	id "org.sonarqube" version "3.3"
-	id 'com.github.kt3k.coveralls' version '2.12.0'
 	id 'com.github.nbaztec.coveralls-jacoco' version '1.2.14'
 }
 
@@ -57,7 +56,6 @@ coveralls {
 */
 coverallsJacoco {
   reportPath = "${buildDir}/reports/jacoco/report.xml"
-  logger.info('A ${project.buildDir}/reports/jacoco/report.xml log message', 'info')
 }
 
 tasks.named('test') {
@@ -78,8 +76,7 @@ jacocoTestReport {
        }
 }
 tasks.coverallsJacoco {
-  dependsOn 'test' // tests are required to run before generating the report
-  dependsOn 'jacocoTestReport'
+  dependsOn 'jacocoTestReport' // tests are required to run before generating the report
 }
 
 sonarqube {
@@ -91,12 +88,12 @@ sonarqube {
   }
 }
 
-tasks.sonarqube {
-  dependsOn 'test' // tests are required to run before generating the report
-  dependsOn 'jacocoTestReport'
+tasks.sonarqube { 
+  dependsOn 'jacocoTestReport' // tests are required to run before generating the report
 }
-
+/*
 tasks.named('asciidoctor') {
 	inputs.dir snippetsDir
 	dependsOn test
 }
+*/
