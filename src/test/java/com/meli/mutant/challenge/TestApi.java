@@ -16,7 +16,6 @@ import com.meli.mutant.request.RequestData;
 import junit.framework.Assert;
 @RunWith(SpringJUnit4ClassRunner.class)
 @TestExecutionListeners( { DependencyInjectionTestExecutionListener.class })
-@ContextConfiguration(locations = {"classpath:/WEB-INF/applicationContext.xml"})
 @SpringBootTest
 public class TestApi {
 	

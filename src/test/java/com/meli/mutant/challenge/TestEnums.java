@@ -13,7 +13,6 @@ import org.springframework.test.context.support.DependencyInjectionTestExecution
 import com.meli.mutant.enums.Direction;
 @RunWith(SpringJUnit4ClassRunner.class)
 @TestExecutionListeners( { DependencyInjectionTestExecutionListener.class })
-@ContextConfiguration(locations = {"classpath:/WEB-INF/applicationContext.xml"})
 @SpringBootTest
 public class TestEnums {
 

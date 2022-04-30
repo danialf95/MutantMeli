@@ -10,7 +10,6 @@ import junit.framework.Assert;
 import org.springframework.test.context.support.DependencyInjectionTestExecutionListener;
 @RunWith(SpringJUnit4ClassRunner.class)
 @TestExecutionListeners( { DependencyInjectionTestExecutionListener.class })
-@ContextConfiguration(locations = {"classpath:/WEB-INF/applicationContext.xml"})
 @SpringBootTest
 class PruebaApplicationTests {
 

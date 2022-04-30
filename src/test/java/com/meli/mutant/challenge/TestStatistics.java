@@ -15,7 +15,6 @@ import com.meli.mutant.controller.MutantStatsController;
 import com.meli.mutant.response.ResponseStatsData;
 @RunWith(SpringJUnit4ClassRunner.class)
 @TestExecutionListeners( { DependencyInjectionTestExecutionListener.class })
-@ContextConfiguration(locations = {"classpath:/WEB-INF/applicationContext.xml"})
 @SpringBootTest
 public class TestStatistics {
 
