@@ -14,8 +14,6 @@ public class TestEnums {
 	@Test
 	public void testEnums()
 	{
-		Assert.assertEquals(Direction.HORIZONTAL_LT.getValue(), 4);
-		Assert.assertEquals(Direction.HORIZONTAL_RT.getValue(), 5);
 		Assert.assertEquals(Direction.HORIZONTAL_LT, Direction.find(4));
 		Assert.assertEquals(Direction.HORIZONTAL_RT, Direction.find(5));
 	}
