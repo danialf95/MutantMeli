@@ -7,6 +7,7 @@ plugins {
 	id 'jacoco'
 	id 'jacoco-report-aggregation'
 	id "org.sonarqube" version "3.3"
+	id 'com.github.kt3k.coveralls' version '2.12.0'
 }
 
 group = 'com.meli.mutant'
@@ -50,6 +51,10 @@ jacoco {
     reportsDir = file("$buildDir/reports/jacoco") //default directory where jacoco generates test reports
     
 }
+
+coveralls {
+    jacocoReportPath 'build/reports/jacoco/jacocoTestReport/jacocoTestReport.xml'
+}
 tasks.named('test') {
      outputs.dir snippetsDir
      useJUnitPlatform()
@@ -63,7 +68,9 @@ tasks.named('test') {
 jacocoTestReport {
     dependsOn test // tests are required to run before generating the report
 }
-
+tasks.coveralls {
+  dependsOn 'test' // tests are required to run before generating the report
+}
 /*
 reporting {
     reports {
