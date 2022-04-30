@@ -1,24 +1,18 @@
-package com.meli.mutant.challenge;
+package com.meli.mutant.controller;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Assert;
+import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.TestExecutionListeners;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import org.springframework.test.context.support.AnnotationConfigContextLoader;
-import org.springframework.test.context.support.DependencyInjectionTestExecutionListener;
+import org.springframework.test.context.junit4.SpringRunner;
 
 import com.meli.mutant.challenge.PruebaApplication;
 import com.meli.mutant.controller.MutantController;
 import com.meli.mutant.service.impl.MutantMeli;
 
-import junit.framework.Assert;
-@RunWith(SpringJUnit4ClassRunner.class)
-@TestExecutionListeners( { DependencyInjectionTestExecutionListener.class })
-@ContextConfiguration(loader=AnnotationConfigContextLoader.class)
-@SpringBootTest
+@RunWith(SpringRunner.class)
+@SpringBootTest(classes=PruebaApplication.class)
 public class TestIsMutant {
 
 	@Autowired

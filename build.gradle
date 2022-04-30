@@ -30,13 +30,15 @@ dependencies {
 	runtimeOnly 'org.postgresql:postgresql'
 	providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-	testImplementation 'org.springframework.restdocs:spring-restdocs-mockmvc'
+	//testImplementation 'org.springframework.restdocs:spring-restdocs-mockmvc'
 	//testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
     //testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+    testRuntimeOnly 'org.junit.vintage:junit-vintage-engine:5.6.2'
     testImplementation 'org.hamcrest:hamcrest-core:1.3'
-    testImplementation 'junit:junit-dep:4.10'
+    testImplementation 'junit:junit:4.13'
     testImplementation 'org.hamcrest:hamcrest-library:1.3'
-    testImplementation 'org.mockito:mockito-core:1.9.+'
+    //testImplementation 'org.mockito:mockito-core:1.9.+'
+   // testCompile 'junit:junit:4.11'
 }
 
 /*
@@ -47,7 +49,7 @@ tasks.named('test') {
 */
 jacoco {
     toolVersion = "0.8.5" //jacoco version
-    reportsDir = file("build/reports/jacoco") //default directory where jacoco generates test reports  
+    reportsDir = file("$buildDir/reports/jacoco") //default directory where jacoco generates test reports  
 }
 /*
 coveralls {
@@ -55,13 +57,13 @@ coveralls {
 }
 */
 coverallsJacoco {
-  reportPath = "build/reports/jacoco/report.xml"
+  reportPath = "$buildDir/reports/jacoco/report.xml"
 }
 jacocoTestReport {
     dependsOn test // tests are required to run before generating the report
     reports{
          xml.enabled true
-         xml.destination file("build/reports/jacoco/report.xml")
+         xml.destination file("$buildDir/reports/jacoco/report.xml")
        }
 }
 
@@ -85,7 +87,7 @@ sonarqube {
     property "sonar.projectKey", "danialf95_MutantMeli"
     property "sonar.organization", "danialf95"
     property "sonar.host.url", "https://sonarcloud.io"
-    property "sonar.coverage.jacoco.xmlReportPaths","build/reports/jacoco/report.xml"
+    property "sonar.coverage.jacoco.xmlReportPaths","$buildDir/reports/jacoco/report.xml"
   }
 }
 
