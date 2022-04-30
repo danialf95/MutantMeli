@@ -31,20 +31,41 @@ private final Integer mutation = 2;
 				Neighbors vecinos = searchNeighbors.search(dna, i, j);
 				if(vecinos.isExists())
 				{
-					System.out.println("La posicion : "+i+" "+j+" Tiene "+vecinos.getIndexlist().size()+" Coincidencias alrededor");
 					ISearch searchRecursive=null;
 					for (Indexes cs : vecinos.getIndexlist()) {
 						
 						Integer orientation= cs.getDirection().getValue();
+						switch (orientation) {
+							case 1:
+							case 8:
+								searchRecursive = new SearchPrincipalDiagonal();
+								break;
+							case 2:
+							case 7:
+								searchRecursive = new SearchVertical();
+								break;
+							case 3:
+							case 6:
+								searchRecursive = new SearchInverseDiagonal();
+								break;
+							case 4:
+							case 5:
+								searchRecursive = new SearchHorizontal();
+								break;
+						default:
+							break;
+						}				
+						/*
+						 Integer orientation= cs.getDirection().getValue();
 						 if(orientation==1 ||orientation==8)
-							searchRecursive = new SearchPrincipalDiagonal();
+							  searchRecursive = new SearchPrincipalDiagonal();
 						 if(orientation==2 ||orientation==7)
-							searchRecursive = new SearchVertical();
+							  searchRecursive = new SearchVertical();
 						 if(orientation==3 ||orientation==6)
-							searchRecursive = new SearchInverseDiagonal();
+							  searchRecursive = new SearchInverseDiagonal();
 						 if(orientation==4 ||orientation==5)
-							 searchRecursive = new SearchHorizontal();
-						 
+							  searchRecursive = new SearchHorizontal();
+						 */
 						//System.out.println("Ocurrio Un error al encontrar la direccion de busqueda");
 									//throw new RuntimeException("Ocurrio Un error al encontrar la direccion de busqueda");
 						
@@ -52,7 +73,6 @@ private final Integer mutation = 2;
 						boolean coincidence = searchRecursive.search(dna.get(i)[j],dna,i,j,cs.getDirection(),0, 4);
 						if(coincidence){ 							
 								countExistsPattern++;
-								System.out.println("Conteo Coincidencia : "+countExistsPattern+" Caracter con patron : "+dna.get(i)[j]+" en "+i+j);
 									if(countExistsPattern>this.mutation) {							
 										return true;
 									}

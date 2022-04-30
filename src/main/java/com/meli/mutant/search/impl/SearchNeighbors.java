@@ -27,7 +27,6 @@ public class SearchNeighbors implements INeighbors{
          List<Indexes> neighbors =new ArrayList<Indexes>();
          for (Indexes indexes : index) {
 			if(Character.compare(data.get(i)[j], data.get(indexes.getPositionI())[indexes.getPositionJ()])== 0) {
-				System.out.println("Encontrado Vecino en la posicion : " +i+j+ "Valor : "+data.get(i)[j]);
 				neighbor.setExists(true);
 				neighbors.add(indexes);
 			}
