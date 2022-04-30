@@ -8,7 +8,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import junit.framework.Assert;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = PruebaApplication.class)
-@SpringBootTest(classes = {PruebaApplicationTests.class})
+@SpringBootTest
 class PruebaApplicationTests {
 
 	@Test

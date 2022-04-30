@@ -12,7 +12,7 @@ import com.meli.mutant.utils.Indexes;
 import junit.framework.Assert;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = PruebaApplication.class)
-@SpringBootTest(classes = {PruebaApplicationTests.class})
+@SpringBootTest
 public class TestIndexes {
 
 	@Test
