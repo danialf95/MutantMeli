@@ -1,4 +1,8 @@
 # Challenge Mutant Meli
+
+<h1 align="center"> Mercado Libre</h1>
+<p align="center"><img src="https://github.com/danialf95/MutantMeli/blob/master/Images/mercado-libre.png"/></p> 
+
 ## _Author Daniel Alfaro_
  - Celular :3044523641
  - Email : danialf95@gmail.com
@@ -22,7 +26,7 @@ Tabla de contenido
  -
  -
 
-## Entorno
+# _Entorno_
 
 - Base de datos: Postgres SQL
 - Lenguaje: JAVA
@@ -32,6 +36,15 @@ Tabla de contenido
 - IDE : Eclipse
 - Pruebas Unitarias : Junit 4.5
 - Cobertura Codigo : JaCoCo 0.8.5
+# _Report Coverage_
+
+Esta reporte de cobertura fue generado con JaCoCo :
+
+```sh
+gradlew test
+```
+
+<img src="https://github.com/danialf95/MutantMeli/blob/master/Images/coverage.PNG"/>
 
 # _Desafío_
 
@@ -77,7 +90,7 @@ Tener en cuenta que la API puede recibir fluctuaciones agresivas de tráfico (En
 millón de peticiones por segundo).
 Test-Automáticos, Code coverage > 80%.
 
-## Solución
+# _Solución_
 
 La solucion trabajada se penso, buscando la forma mas optima en la cual se pudiera recorrer la matriz con la menor comlejidad posible, buscando el patron descrito en el desafio, para ello se trabajo en dos conceptos en los cuales se baso el analisis, diseño e implementacion del algoritmo :
 
@@ -93,7 +106,7 @@ De cara al desarrollo se trabajo de la mano de 2 patrones de diseño que facilit
    - SOLID
    - MVC
 
-### Algoritmo
+# _Algoritmo_
 
 A continuacion se desgloza el algoritmo implementado para el ejercicio
 
@@ -111,7 +124,7 @@ A continuacion se desgloza el algoritmo implementado para el ejercicio
  Imagen 4
 5. Se repiten nuevamente los pasos anteriores por cada posicion del arreglo hasta que se encuentra mas de una mutacion, donde el algoritmo se detiene deja de iterar y brindara la respuesta final.
 
-### Base de Datos
+# _Base de Datos_
 Cumpliendo con el punto 3 del desafio y teniendo en cuenta la necesidad definida en la prueba, se opta por utilizar una base de datos relacional (PostgreSql) debido a que los datos a almacenar tienen una estructura acotada, no son complejos y el modulo de persintecia mediante JPA  ya esta optimizado para la alta demanda que requiere esta aplicacion. A continuación Adjunto el script DDL de creacion :
 
 ```sh
@@ -127,15 +140,15 @@ Adicion de constraint :
 ALTER TABLE test.logauditadn ADD PRIMARY KEY (id);
 ```
 
-## Aplicacion(Hosteada)
+# _Aplicacion(Hosteada)_
 
 
 
-## Instalacion local
+## _Instalacion local_
 
-# Gradle
+# _Gradle_
 
-## Api
+# _Uso Api_
 
 
 
