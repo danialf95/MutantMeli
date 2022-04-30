@@ -59,8 +59,8 @@ coveralls {
 */
 coverallsJacoco {
     
+reportPath = 'build/reports/jacoco/test/html/index.html'
 }
-
 
 tasks.named('test') {
      outputs.dir snippetsDir
