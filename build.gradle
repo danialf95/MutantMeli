@@ -95,7 +95,7 @@ sonarqube {
     property "sonar.projectKey", "danialf95_MutantMeli"
     property "sonar.organization", "danialf95"
     property "sonar.host.url", "https://sonarcloud.io"
-    property "sonar.coverage.jacoco.xmlReportPaths","build/reports/jacoco/test/html/index.html"
+    property "sonar.coverage.jacoco.xmlReportPaths","build/reports/jacoco/report.xml"
   }
 }
 
