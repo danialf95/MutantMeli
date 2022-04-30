@@ -5,15 +5,17 @@ package com.meli.mutant.api;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.junit.runners.JUnit4;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.junit4.SpringRunner;
 import com.meli.mutant.api.ApiRestController;
 import com.meli.mutant.challenge.PruebaApplication;
 import com.meli.mutant.request.RequestData;
 
 
-@RunWith(SpringRunner.class)
+@RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest(classes=PruebaApplication.class)
 public class TestApi {
 	
