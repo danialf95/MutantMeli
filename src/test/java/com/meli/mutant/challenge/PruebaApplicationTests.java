@@ -5,8 +5,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ContextConfiguration;
 
 import junit.framework.Assert;
-@ContextConfiguration
-@SpringBootTest
+@ContextConfiguration(classes = PruebaApplication.class)
+@SpringBootTest(classes = {PruebaApplicationTests.class})
 class PruebaApplicationTests {
 
 	@Test

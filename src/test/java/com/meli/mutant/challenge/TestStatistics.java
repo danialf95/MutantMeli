@@ -11,7 +11,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 import com.meli.mutant.controller.MutantStatsController;
 import com.meli.mutant.response.ResponseStatsData;
 @RunWith(SpringRunner.class)
-@ContextConfiguration
+@ContextConfiguration(classes = PruebaApplication.class)
 @SpringBootTest(classes = {PruebaApplication.class})
 public class TestStatistics {
 
