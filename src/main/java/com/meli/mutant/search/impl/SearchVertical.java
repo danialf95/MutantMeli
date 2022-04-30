@@ -17,9 +17,9 @@ public class SearchVertical implements ISearch{
 		            		return true;
 		            	}else {
 		            		if(dir.getValue()==2) //UP
-		            		return this.search(caracter, data, i-1, j, dir, coincidence, minCoincidence);
+		            		  return this.search(caracter, data, i-1, j, dir, coincidence, minCoincidence);
 		            		if(dir.getValue()==7) //DOWN
-		            		return this.search(caracter, data, i+1, j, dir, coincidence, minCoincidence);
+		            		  return this.search(caracter, data, i+1, j, dir, coincidence, minCoincidence);
 		            	}	
 				     } else {
 				    	  return false; 

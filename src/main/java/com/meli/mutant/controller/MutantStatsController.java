@@ -20,7 +20,7 @@ public class MutantStatsController {
 		try {
 		response.setCount_human_dna(stats.countByStatus(false));
 		response.setCount_mutant_dna(stats.countByStatus(true));
-		response.setRatio((double) (response.getCount_human_dna()/response.getCount_mutant_dna()));
+		response.setRatio(Double.valueOf((response.getCount_human_dna()/response.getCount_mutant_dna())));
 		return response;
 		} catch (Exception e) {
 			// TODO: handle exception

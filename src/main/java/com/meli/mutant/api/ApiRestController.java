@@ -38,8 +38,8 @@ public class ApiRestController {
 			  else  return ResponseEntity.status(HttpStatus.FORBIDDEN).build();
 			
 		    } catch (Exception e) {
-				ResponseError ResponseException=new ResponseError(500,e.getMessage());
-				return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(ResponseException);
+				ResponseError responseException=new ResponseError(500,e.getMessage());
+				return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(responseException);
 		    }
 	}
 	
@@ -51,8 +51,8 @@ public class ApiRestController {
 		try {	
 			return ResponseEntity.ok().body(statsController.getStatistics());
 		} catch (Exception e) {
-			ResponseError ResponseException=new ResponseError(500,e.getMessage());
-			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(ResponseException);
+			ResponseError responseException=new ResponseError(500,e.getMessage());
+			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(responseException);
 		}
 	}
 	

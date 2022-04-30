@@ -18,9 +18,9 @@ public class SearchPrincipalDiagonal implements ISearch{
 	            		return true;
 	            	}else {
 	            		if(dir.getValue()==1) //UP
-	            		return this.search(character, data, i-1, j-1, dir, coincidence, minCoincidence);
+	            		  return this.search(character, data, i-1, j-1, dir, coincidence, minCoincidence);
 	            		if(dir.getValue()==8) //DOWN
-	            		return this.search(character, data, i+1, j+1, dir, coincidence, minCoincidence);
+	            		  return this.search(character, data, i+1, j+1, dir, coincidence, minCoincidence);
 	            	}	
 			     } else {
 			    	  return false; 

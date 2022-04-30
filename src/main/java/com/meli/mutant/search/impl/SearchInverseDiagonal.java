@@ -17,9 +17,9 @@ public class SearchInverseDiagonal implements ISearch{
 	            		return true;
 	            	}else {
 	            		if(dir.getValue()==3) //UP
-	            		return this.search(caracter, data, i-1, j+1, dir, coincidence, minCoincidence);
+	            		  return this.search(caracter, data, i-1, j+1, dir, coincidence, minCoincidence);
 	            		if(dir.getValue()==6) //DOWN
-	            		return this.search(caracter, data, i+1, j-1, dir, coincidence, minCoincidence);
+	            		  return this.search(caracter, data, i+1, j-1, dir, coincidence, minCoincidence);
 	            	}	
 			     } else {
 			    	  return false; 

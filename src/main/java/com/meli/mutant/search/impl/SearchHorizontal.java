@@ -17,9 +17,9 @@ public class SearchHorizontal implements ISearch{
 	            		return true;
 	            	}else {
 	            		if(dir.getValue()==4) //LEFT
-	            		return this.search(caracter, data, i, j-1, dir, coincidence, minCoincidence);
+	            		  return this.search(caracter, data, i, j-1, dir, coincidence, minCoincidence);
 	            		if(dir.getValue()==5) //RIGHT
-	            		return this.search(caracter, data, i, j+1, dir, coincidence, minCoincidence);
+	            		  return this.search(caracter, data, i, j+1, dir, coincidence, minCoincidence);
 	            	}	
 			     } else {
 			    	  return false; 
