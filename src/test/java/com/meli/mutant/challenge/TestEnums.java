@@ -10,7 +10,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 import com.meli.mutant.enums.Direction;
 @RunWith(SpringRunner.class)
 @ContextConfiguration
-@SpringBootTest
+@SpringBootTest(classes = {PruebaApplication.class})
 public class TestEnums {
 
 	

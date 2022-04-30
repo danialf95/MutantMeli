@@ -12,7 +12,7 @@ import com.meli.mutant.controller.MutantStatsController;
 import com.meli.mutant.response.ResponseStatsData;
 @RunWith(SpringRunner.class)
 @ContextConfiguration
-@SpringBootTest
+@SpringBootTest(classes = {PruebaApplication.class})
 public class TestStatistics {
 
 	

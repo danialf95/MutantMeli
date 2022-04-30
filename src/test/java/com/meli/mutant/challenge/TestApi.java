@@ -13,7 +13,7 @@ import com.meli.mutant.request.RequestData;
 import junit.framework.Assert;
 @RunWith(SpringRunner.class)
 @ContextConfiguration
-@SpringBootTest
+@SpringBootTest(classes = {PruebaApplication.class})
 public class TestApi {
 	
 	
