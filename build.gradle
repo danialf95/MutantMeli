@@ -49,8 +49,7 @@ tasks.named('test') {
 */
 jacoco {
     toolVersion = "0.8.5" //jacoco version
-    reportsDir = file("$buildDir/reports/jacoco") //default directory where jacoco generates test reports
-    
+    reportsDir = file("$buildDir/reports/jacoco") //default directory where jacoco generates test reports  
 }
 /*
 coveralls {
@@ -58,8 +57,6 @@ coveralls {
 }
 */
 coverallsJacoco {
-  dependsOn 'test' // tests are required to run before generating the report
-  dependsOn 'jacocoTestReport'  
   reportPath = 'build/reports/jacoco/report.xml'
 }
 
