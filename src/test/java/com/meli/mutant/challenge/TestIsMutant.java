@@ -14,8 +14,8 @@ import com.meli.mutant.service.impl.MutantMeli;
 
 import junit.framework.Assert;
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = PruebaApplication.class)
-@SpringBootTest
+@ContextConfiguration
+@SpringBootTest(classes = PruebaApplication.class)
 public class TestIsMutant {
 
 	@Autowired
