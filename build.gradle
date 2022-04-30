@@ -57,6 +57,7 @@ coveralls {
 */
 coverallsJacoco {
   reportPath = "${project.buildDir}/reports/jacoco/report.xml"
+  logger.info('A ${project.buildDir}/reports/jacoco/report.xml log message', 'info')
 }
 
 tasks.named('test') {
