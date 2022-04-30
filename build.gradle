@@ -59,7 +59,7 @@ coveralls {
 */
 coverallsJacoco {
     
-reportPath = 'build/reports/jacoco/test/html/index.html'
+reportPath = 'build/reports/jacoco/report.xml'
 }
 
 tasks.named('test') {
@@ -67,7 +67,7 @@ tasks.named('test') {
      useJUnitPlatform()
      //dependsOn tasks.named('testCodeCoverageReport', JacocoReport)
     //ignoreFailures = true
-    finalizedBy jacocoTestReport // report is always generated after tests run
+     finalizedBy jacocoTestReport // report is always generated after tests run
    
 }
 
@@ -76,6 +76,7 @@ jacocoTestReport {
     dependsOn test // tests are required to run before generating the report
     reports{
          xml.enabled true
+         xml.destination file("${rootProject.projectDir}/build/reports/jacoco/report.xml")
        }
 }
 tasks.coverallsJacoco {
