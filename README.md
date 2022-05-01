@@ -20,14 +20,21 @@
 - *Perfromance And Stress Test* 
 [![CoverStatus](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
 
-Esta aplicacion fue desarrollada como una prueba de ingreso a Meli en lenguaje Java.
+# _Introducción_
+
+Esta aplicación fue desarrollada como una prueba de ingreso a Meli en lenguaje Java.
 
 Tabla de contenido
 
- -
- -
- -
- -
+ - [Entorno](#entorno)
+ - [Report Coverage](#report-coverage)
+ - [Desafío](#desafío)
+ - [Solución](#solución)
+ - [Algoritmo](#algoritmo)
+ - [Base de datos](#base-de-datos)
+ - [Aplicación Hosteada](#aplicación-hosteada)
+ - [Instalación Local](#instalacion-local)
+ - [Uso de la Api](#uso-de-la-api)
 
 # _Entorno_
 
@@ -39,9 +46,11 @@ Tabla de contenido
 - IDE : Eclipse
 - Pruebas Unitarias : Junit 4.5
 - Cobertura Codigo : JaCoCo 0.8.5
+
+
 # _Report Coverage_
 
-Esta reporte de cobertura fue generado con JaCoCo :
+Este reporte de cobertura fue generado con JaCoCo, con una cifra superior al 85% :
 
 ```sh
 gradlew test
@@ -49,7 +58,7 @@ gradlew test
 
 <img src="https://github.com/danialf95/MutantMeli/blob/master/Images/coverage.PNG"/>
 
-el reultado de la ejecucion lo podras encontrar en la siguiente ruta :
+El reultado de la ejecución lo podras encontrar en la siguiente ruta :
 
 >  {$rootProjectDir}\build\reports\jacoco\test\html\index.html
 
@@ -119,7 +128,7 @@ De cara a la implementacion del desarrollo se trabajo de la mano de 2 patrones d
 
 A continuacion se desgloza el algoritmo implementado para el ejercicio
 
-1. Por cada posicion del arreglo, se revisa si el campo en la posicion I J es el origen de algun patron de mutacion genetica , esto se hace buscando     los campos vecinos de dicha posicion que conforman un cuadrante de  8 posiciones.
+1. Por cada posicion del arreglo, se revisa si el campo en la posición I J es el origen de algun patron de mutación genetica , esto se hace buscando     los campos vecinos de dicha posicion que conforman un cuadrante de  8 posiciones.
   
  Imagen 1
 
@@ -149,11 +158,11 @@ Adicion de constraint :
 ALTER TABLE test.logauditadn ADD PRIMARY KEY (id);
 ```
 
-# _Aplicacion(Hosteada)_
+# _Aplicación Hosteada_
 
-La aplicaciom se encuentra despelgada en la nube de IBM mediante PaaS, proporcionada por cloud foundry.
+La aplicación se encuentra desplegada en la nube de IBM mediante PaaS, proporcionada por cloud foundry.
 
-El entorno utilzado en la aplicacion es el siguiente:
+El entorno utilzado en la aplicación es el siguiente:
 
  - Runtime : Tomcat 8.0
  - Ram :256MB
@@ -165,11 +174,9 @@ El entorno utilzado en la aplicacion es el siguiente:
 
 El endpoint de la aplicación es el siguiente > https://mutant-api.mybluemix.net/
 
-## _Instalacion local_
+# _Instalacion local_
 
-# _Gradle_
-
-# _Uso Api_
+# _Uso de la Api_
 
 
 
