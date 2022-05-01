@@ -10,10 +10,13 @@
 
 # Badges
 
-- *Coverage Code*
-[![CoverStatus](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
+- *Uptime*
+![Uptime Robot status](https://badgen.net/uptime-robot/day/m791608176-6d18823c6ba6d82a5749d08a)
 - *Quality And Security*
  [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=danialf95_MutantMeli&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=danialf95_MutantMeli)
+ - *Response Time* 
+![Uptime Robot status](https://badgen.net/uptime-robot/response/m791608176-6d18823c6ba6d82a5749d08a)
+
 - *Perfromance And Stress Test* 
 [![CoverStatus](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
 
@@ -45,6 +48,10 @@ gradlew test
 ```
 
 <img src="https://github.com/danialf95/MutantMeli/blob/master/Images/coverage.PNG"/>
+
+el reultado de la ejecucion lo podras encontrar en la siguiente ruta :
+
+>  {$rootProjectDir}\build\reports\jacoco\test\html\index.html
 
 # _Desafío_
 
@@ -122,7 +129,7 @@ A continuacion se desgloza el algoritmo implementado para el ejercicio
 
 3. Una vez detectados los cuadrantes y los vecinos con coincidencia, se procede a evaluar en cada direccion detectada, el patron de 4 caracteres consecutivos mediante recursion para confirmar una mutacion genetica. 
  Imagen 3
-4. En caso de que se encuentre algun caracter diferente que impida el cumplimiento del patron inmediatamente se termina la busqueda en esa direcciony se continua  con las otras direccioneshacia las cuales exista alguna coincidencia
+4. En caso de que se encuentre algun caracter diferente que impida el cumplimiento del patron inmediatamente se termina la busqueda en esa direccion y se continua  con las otras direcciones hacia las cuales exista alguna coincidencia.
  Imagen 4
 5. Se repiten nuevamente los pasos anteriores por cada posicion del arreglo hasta que se encuentra mas de una mutacion, donde el algoritmo se detiene deja de iterar y brindara la respuesta final.
 
