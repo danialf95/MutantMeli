@@ -25,18 +25,42 @@ public class TestIsMutant {
 		Assert.assertEquals(6, mutant.generateMatrix(payload).size());
 		Assert.assertNotNull(mutant.generateMatrix(payload));
 	}
+	
+	@Test
+	public void invalidGeneticCodeMatrix() {
+		String[] payload = {"XTGCGA","CAGTGC","TTATGT","AGAAGG","CCCCTA","TCACTG"};
+		MutantMeli mutant =new  MutantMeli();
+		Exception exception = Assert.assertThrows(RuntimeException.class, () -> {
+			     mutant.generateMatrix(payload);
+		    });
+		    String expectedMessage = "Invalid genetic code";
+		    String actualMessage = exception.getMessage();
+		    Assert.assertTrue(actualMessage.contains(expectedMessage));
+	}
+	
+	@Test
+	public void invalidSizeCodeMatrix() {
+		String[] payload = {"TTGCGA","CAGC","TTATGT","AGAAGG","CCCCTA","TCACTG"};
+		MutantMeli mutant =new MutantMeli();
+		Exception exception = Assert.assertThrows(RuntimeException.class, () -> {
+			     mutant.generateMatrix(payload);
+		    });
+		    String expectedMessage = "Invalid structure genetic code";
+		    String actualMessage = exception.getMessage();
+		    Assert.assertTrue(actualMessage.contains(expectedMessage));
+	}
+	
+	
 	@Test
 	public void isMutant()
 		{
 			String[] payload = {"ATGCGA","CAGTGC","TTATGT","AGAAGG","CCCCTA","TCACTG"};
-			//MutantController contro = new MutantController();
 			Assert.assertEquals(true, contro.verificationMutant(payload)); 	
 		}
 	@Test
 	public void isHuman()
 		{
 			String[] payload = {"ATGCGA","CAGTGC","TTATAT","AGAAGG","CCCATA","TCACTG"};
-			//MutantController contro = new MutantController();
 			Assert.assertEquals(false, contro.verificationMutant(payload));
 		}
 	

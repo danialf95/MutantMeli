@@ -25,7 +25,6 @@ public class SearchVertical implements ISearch{
 				    	  return false; 
 				     }
 	        } catch (Exception e) {
-	   		// TODO: handle exception
 	    	  return false ;
 	        }
 	     return false;	

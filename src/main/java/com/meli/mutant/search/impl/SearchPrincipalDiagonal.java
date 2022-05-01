@@ -26,7 +26,6 @@ public class SearchPrincipalDiagonal implements ISearch{
 			    	  return false; 
 			     }
         } catch (Exception e) {
-   		// TODO: handle exception
     	  return false ;
         }
      return false;	

@@ -20,7 +20,7 @@ public class SearchNeighbors implements INeighbors{
 	
 	@Override
 	public Neighbors search(Vector<char[]> data, int i, int j) {
-		// TODO Auto-generated method stub	
+			
 		 Neighbors neighbor = new Neighbors();
 		 neighbor.setExists(false);
          List<Indexes> index = this.calculateIndexof(data, i, j);
@@ -38,7 +38,7 @@ public class SearchNeighbors implements INeighbors{
 
 	@Override
 	public List<Indexes> calculateIndexof(Vector<char[]> data, int i, int j) {
-		// TODO Auto-generated method stub
+		
 		List<Indexes> index = new ArrayList<Indexes>();
 		Integer maxIndex = data.size();
 		index.add(new Indexes(i-1, j-1,maxIndex,Direction.DIAGONAL_P_UP));

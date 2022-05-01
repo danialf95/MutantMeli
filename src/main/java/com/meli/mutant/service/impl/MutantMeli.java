@@ -2,6 +2,8 @@ package com.meli.mutant.service.impl;
 
 
 import java.util.Vector;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -87,12 +89,15 @@ private final Integer mutation = 2;
 
 	@Override
 	public Vector<char[]> generateMatrix(String[] dna) {
-		// TODO Auto-generated method stub
+		
 		int normalize = dna[0].length(); 
 		Vector<char[]> vector = new Vector<char[]>();
+		Pattern pat = Pattern.compile("(A|C|G|T)+");
+		Matcher mat = null;                                                                           
 		for (String string : dna) 
 			{
-				if(string.toUpperCase().matches("[ACGT]"))
+			    mat = pat.matcher(string.toUpperCase());
+			     if(!mat.matches())
 					throw new RuntimeException("Invalid genetic code");
 				if(normalize != string.length())
 					throw new RuntimeException("Invalid structure genetic code");
