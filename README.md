@@ -108,42 +108,49 @@ Test-Automáticos, Code coverage > 80%.
 
 # _Solución_
 
-La solucion trabajada se penso, buscando la forma mas optima en la cual se pudiera recorrer la matriz con la menor comlejidad posible, buscando el patron descrito en el desafio, para ello se trabajo en dos conceptos en los cuales se baso el analisis, diseño e implementacion del algoritmo :
+La solución trabajada se pensó, buscando la forma más óptima en la cual se pudiera recorrer la matriz con la menor complejidad posible, buscando el patrón descrito en el desafío, para ello se trabajó en dos conceptos en los cuales se basó el análisis, diseño e implementación del algoritmo:
 
 >  - Divide y Venceras.
-    - Se fragmento el desafio original en problemas mas pequeños, donde se busco dividir las busquedas de patrones en metodos especificos para cada       direccion, cada metodo se encargara de abstraer el problema y la solucion. Con ello en vez de hacer recorridos innecesarios, se identifica la direccion de busqueda donde existe una posiblidad de encontrar el patron y se le cede la busqueda del patron al metodo que de acuerdo a la direccion esta en la capacidad de buscar el patron mediane recursion.
->  - Recursion.
-     - Debido a que el problema requiere de implementar busquedas inteligentes u optimizadas para reducir la complejidad algoritmica del desarrollo         y la carga operativa de buscar coincidencias, se penso en una solucion que implementara recursion a la hora de buscar el patron en una            direccion especifica, para ello se utilizo la siguiente firma que es invocada de manera recursiva hasta encontrar la cantidad de coincidencias        esperadas.
+    - Se fragmento el desafío original en problemas más pequeños, donde se buscó dividir las búsquedas de patrones en métodos específicos para cada dirección, cada método se encargara de abstraer el problema y la solución. Con ello en vez de hacer recorridos innecesarios, se identifica la dirección de búsqueda donde existe una posibilidad de encontrar el patrón y se le cede la búsqueda del patrón al método que de acuerdo a la dirección está en la capacidad de buscar el patrón mediante recursión.
+>  - Recursión.
+     - Debido a que el problema requiere de implementar búsquedas inteligentes u optimizadas para reducir la complejidad algorítmica del desarrollo y la carga operativa de buscar coincidencias, se pensó en una solución que implementara recursión a la hora de buscar el patrón en una            dirección específica, para ello se utilizó la siguiente firma que es invocada de manera recursiva hasta encontrar la cantidad de coincidencias esperadas.
 ```sh 
  > public boolean search(char caracter,Vector<char[]> data, int i,int j,Direction dir,Integer Coincidence,Integer minCoincidence);
 ```
-> Este metodo retorna un booleano indicando si en la direccion donde se presume hay coincidencia se encontro el patron esperado o no,la busqueda  se realiza solo sobre los campos del array de los cuales sospechamos hay coincidencia, y no tenemos que recorrer todo el array mediante un for u      otro tipo de iterador que puede aumentar la complejidad algoritmica. Por ejemplo en caso de que en la busqueda se encuentre un caracter que      daña el patron , se acaba la recursion y no seguimos buscando en esa direccion.
+> Este método retorna un booleano indicando si en la dirección donde se presume hay coincidencia se encontró el patrón esperado o no, la búsqueda  se realiza solo sobre los campos del array de los cuales sospechamos hay coincidencia, y no tenemos que recorrer todo el array mediante un for u otro tipo de iterador que puede aumentar la complejidad algorítmica. Por ejemplo en caso de que en la búsqueda se encuentre un carácter que daña el patrón, se acaba la recursión y no seguimos buscando en esa dirección.
 
-De cara a la implementacion del desarrollo se trabajo de la mano de 2 patrones de diseño que facilitaron la implementacion del algoritmo, adicionalmente estos patrones permiten que la aplicacion sea escalable, adaptable, y facilmente testeable :
+De cara a la implementación del desarrollo se trabajó de la mano de 2 patrones de diseño que facilitaron la implementación del algoritmo, adicionalmente estos patrones permiten que la aplicación sea escalable, adaptable, y fácilmente testeable :
+
 
    - [SOLID](https://profile.es/blog/principios-solid-desarrollo-software-calidad/)
    - [MVC](https://desarrolloweb.com/articulos/que-es-mvc.html)
 
 # _Algoritmo_
 
-A continuacion se desgloza el algoritmo implementado para el ejercicio
+A continuación se desglosa el algoritmo implementado para el ejercicio
 
-1. Por cada posicion del arreglo, se revisa si el campo en la posición I J es el origen de algun patron de mutación genetica , esto se hace buscando     los campos vecinos de dicha posicion que conforman un cuadrante de  8 posiciones.
-  
- Imagen 1
-
-2. Cada vecino tendra unas coordenadas I J que en caso de ser invalidas seran eliminadas y no se har ala busqueda en ellas esto pasa en casos como por ejemplo coordenadas negativas o cordenadas fuera de la matriz de busqueda
-  
- Imagen 2
-
-3. Una vez detectados los cuadrantes y los vecinos con coincidencia, se procede a evaluar en cada direccion detectada, el patron de 4 caracteres consecutivos mediante recursion para confirmar una mutacion genetica. 
- Imagen 3
-4. En caso de que se encuentre algun caracter diferente que impida el cumplimiento del patron inmediatamente se termina la busqueda en esa direccion y se continua  con las otras direcciones hacia las cuales exista alguna coincidencia.
- Imagen 4
-5. Se repiten nuevamente los pasos anteriores por cada posicion del arreglo hasta que se encuentra mas de una mutacion, donde el algoritmo se detiene deja de iterar y brindara la respuesta final.
+1. Por cada posición del arreglo, se revisa si el campo en la posición I J es el origen de algún patrón de mutación genética, esto se hace buscando los campos vecinos de dicha posición que conforman un cuadrante de 8 posiciones.
+<p align="center">  
+ <img src="https://github.com/danialf95/MutantMeli/blob/master/Images/Imagen-1.PNG"/>
+</p>
+2. Cada vecino tendrá unas coordenadas I J que en caso de ser invalidas serán eliminadas y no se hará la búsqueda en ellas esto pasa en casos como por ejemplo coordenadas negativas o coordenadas fuera de la matriz de búsqueda.
+<div>  
+ <p align="center">
+<img src="https://github.com/danialf95/MutantMeli/blob/master/Images/Imagen-2.PNG" /> <img src="https://github.com/danialf95/MutantMeli/blob/master/Images/Imagen-2_1.PNG" />
+ </p>
+</div>
+3. Una vez detectados los cuadrantes y los vecinos con coincidencia, se procede a evaluar en cada dirección detectada, el patrón de 4 caracteres consecutivos mediante recursión para confirmar una mutación genética.
+ <p align="center">  
+ <img src="https://github.com/danialf95/MutantMeli/blob/master/Images/Imagen-3.PNG"/> <img src="https://github.com/danialf95/MutantMeli/blob/master/Images/Imagen-3_2.PNG"/> 
+ </p>
+4. En caso de que se encuentre algún carácter diferente que impida el cumplimiento del patrón inmediatamente se termina la búsqueda en esa dirección y se continúa con las otras direcciones, hacia las cuales exista alguna coincidencia.
+<p align="center">  
+ <img src="https://github.com/danialf95/MutantMeli/blob/master/Images/Imagen-4.PNG"/>
+</p>
+5. Se repiten nuevamente los pasos anteriores por cada posición del arreglo hasta que se encuentra más de una mutación, donde el algoritmo se detiene por completo, deja de iterar y brindara la respuesta final.
 
 # _Base de Datos_
-Cumpliendo con el punto 3 del desafio y teniendo en cuenta la necesidad definida en la prueba, se opta por utilizar una base de datos relacional (PostgreSql) debido a que los datos a almacenar tienen una estructura acotada, no son complejos y el modulo de persintecia mediante JPA  ya esta optimizado para la alta demanda que requiere esta aplicacion. A continuación Adjunto el script DDL de creacion :
+Cumpliendo con el punto 3 del desafío y teniendo en cuenta la necesidad definida en la prueba, se opta por utilizar una base de datos relacional (PostgreSql) debido a que los datos a almacenar tienen una estructura acotada, no son complejos y el módulo de persistencia mediante JPA  ya está optimizado para la alta demanda que requiere esta aplicación. A continuación Adjunto el script DDL de creación:
 
 ```sh
 CREATE TABLE test.logauditadn (
@@ -174,7 +181,23 @@ El entorno utilzado en la aplicación es el siguiente:
 
 El endpoint de la aplicación es el siguiente > https://mutant-api.mybluemix.net/
 
-# _Instalacion local_
+# _Instalación local_
+
+1. Descargar el repositorio desde :
+```sh
+ git clone https://github.com/danialf95/MutantMeli.git
+```
+2. Instalar Gradle (Windows)
+```sh
+ Ver siguiente tutorial [Tuto](https://parzibyte.me/blog/2019/07/27/instalar-configurar-gradle/)
+```
+3. En caso de utilzar algun IDE de desarrollo, el proyecto debe importarse como proyecto gradle.
+4. Ubicarse en el root del proyecto.
+5. Ejecutar la aplicación.
+```sh
+ Ver siguiente tutorial [Tuto](https://parzibyte.me/blog/2019/07/27/instalar-configurar-gradle/)
+```
+
 
 # _Uso de la Api_
 
