@@ -94,17 +94,19 @@ Test-Automáticos, Code coverage > 80%.
 
 La solucion trabajada se penso, buscando la forma mas optima en la cual se pudiera recorrer la matriz con la menor comlejidad posible, buscando el patron descrito en el desafio, para ello se trabajo en dos conceptos en los cuales se baso el analisis, diseño e implementacion del algoritmo :
 
-  - Divide y Venceras.
+>  - Divide y Venceras.
     - Se fragmento el desafio original en problemas mas pequeños, donde se busco dividir las busquedas de patrones en metodos especificos para cada       direccion, cada metodo se encargara de abstraer el problema y la solucion. Con ello en vez de hacer recorridos innecesarios, se identifica la direccion de busqueda donde existe una posiblidad de encontrar el patron y se le cede la busqueda del patron al metodo que de acuerdo a la direccion esta en la capacidad de buscar el patron mediane recursion.
-  - Recursion.
+>  - Recursion.
      - Debido a que el problema requiere de implementar busquedas inteligentes u optimizadas para reducir la complejidad algoritmica del desarrollo         y la carga operativa de buscar coincidencias, se penso en una solucion que implementara recursion a la hora de buscar el patron en una            direccion especifica, para ello se utilizo la siguiente firma que es invocada de manera recursiva hasta encontrar la cantidad de coincidencias        esperadas.
- >  public boolean search(char caracter,Vector<char[]> data, int i,int j,Direction dir,Integer Coincidence,Integer minCoincidence);
-     Este metodo retorna un booleano indicando si en la direccion donde se presume hay coincidencia se encontro el patron esperado o no,la busqueda      se realiza solo sobre los campos del array de los cuales sospechamos hay coincidencia, y no tenemos que recorrer todo el array mediante un for u      otro tipo de iterador que puede aumentar la complejidad algoritmica. Por ejemplo en caso de que en la busqueda se encuentre un caracter que      daña el patron , se acaba la recursion y no seguimos buscando en esa direccion.
+```sh 
+ > public boolean search(char caracter,Vector<char[]> data, int i,int j,Direction dir,Integer Coincidence,Integer minCoincidence);
+```
+> Este metodo retorna un booleano indicando si en la direccion donde se presume hay coincidencia se encontro el patron esperado o no,la busqueda  se realiza solo sobre los campos del array de los cuales sospechamos hay coincidencia, y no tenemos que recorrer todo el array mediante un for u      otro tipo de iterador que puede aumentar la complejidad algoritmica. Por ejemplo en caso de que en la busqueda se encuentre un caracter que      daña el patron , se acaba la recursion y no seguimos buscando en esa direccion.
 
-De cara al desarrollo se trabajo de la mano de 2 patrones de diseño que facilitaron la implementacion del algoritmo, adicionalmente permiten que la aplicacion sea esclaable y adaptable, y facilmente testeable estos patrones son :
+De cara a la implementacion del desarrollo se trabajo de la mano de 2 patrones de diseño que facilitaron la implementacion del algoritmo, adicionalmente estos patrones permiten que la aplicacion sea escalable, adaptable, y facilmente testeable :
 
-   - SOLID
-   - MVC
+   - [SOLID](https://profile.es/blog/principios-solid-desarrollo-software-calidad/)
+   - [MVC](https://desarrolloweb.com/articulos/que-es-mvc.html)
 
 # _Algoritmo_
 
@@ -142,7 +144,7 @@ ALTER TABLE test.logauditadn ADD PRIMARY KEY (id);
 
 # _Aplicacion(Hosteada)_
 
-La aplicaciom se encuentra despelgada en la nube de IBM mediante Paas, proporiconado por cloud foundry.
+La aplicaciom se encuentra despelgada en la nube de IBM mediante PaaS, proporcionada por cloud foundry.
 
 El entorno utilzado en la aplicacion es el siguiente:
 
