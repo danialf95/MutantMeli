@@ -4,7 +4,7 @@
 <p align="center"><img src="https://github.com/danialf95/MutantMeli/blob/master/Images/mercado-libre.png"/></p> 
 
 ## _Author Daniel Alfaro_
- - Celular :3044523641
+ - Celular : +573044523641
  - Email : danialf95@gmail.com
  - Linkedin : https://www.linkedin.com/in/danielalejandroalfarourrea/
 
@@ -177,7 +177,7 @@ El entorno utilzado en la aplicación es el siguiente:
  - Location : Dallas
  - app-name : api.mutant
  - host-name: mutant-api
- - domain . mybluemix.net
+ - domain : mybluemix.net
 
 El endpoint de la aplicación es el siguiente > https://mutant-api.mybluemix.net/
 
@@ -195,9 +195,24 @@ El endpoint de la aplicación es el siguiente > https://mutant-api.mybluemix.net
 4. Ubicarse en el root del proyecto.
 5. Ejecutar la aplicación.
 ```sh
- Ver siguiente tutorial [Tuto](https://parzibyte.me/blog/2019/07/27/instalar-configurar-gradle/)
+gradlew bootRun
 ```
+ - La aplicación se ejecutará y se levantara una instancia Tomcat(Embebida)en el puerto 8080
+ - Para probar que este to ok puedes consumit el siguiente endpoint http://localhost:8080/api/stats alli tendras una respuesta de las estadisticas actuales de la  api
+6. Para generar el compilado escribe el siguiente comando:
+```sh
+gradlew build
+```
+ - Esto genera un artefacto tipo .war listo para desplegar que podras encontar en la ruta
+   - {$rootProjectDir}/build/libs/prueba-0.0.1-SNAPSHOT.war
+ - Al ejcutar el comando, no solo se genera el compilado, tambien se ejecutan las pruebas y segenera el reporte de cobertura que puede ser revisado en la siguiente ruta del proyecto
+    - {$rootProjectDir}/build/reports/jacoco/test/html/index.html
 
+7. Si se desea ejecutar solo las pruebas sin generas compilado, digitar el siguiente comando:
+```sh
+gradlew test
+```
+ - Este comando ejecutará las pruebas unitarias y posterior a ello generar el reporte de coberura con JaCoCo que se podra encontar en la ruta descrita en el punto anterior.
 
 # _Uso de la Api_
 
