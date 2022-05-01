@@ -142,7 +142,19 @@ ALTER TABLE test.logauditadn ADD PRIMARY KEY (id);
 
 # _Aplicacion(Hosteada)_
 
+La aplicaciom se encuentra despelgada en la nube de IBM mediante Paas, proporiconado por cloud foundry.
 
+El entorno utilzado en la aplicacion es el siguiente:
+
+ - Runtime : Tomcat 8.0
+ - Ram :256MB
+ - Core : 1
+ - Location : Dallas
+ - app-name : api.mutant
+ - host-name: mutant-api
+ - domain . mybluemix.net
+
+El endpoint de la aplicación es el siguiente > https://mutant-api.mybluemix.net/
 
 ## _Instalacion local_
 
