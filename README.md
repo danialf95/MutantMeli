@@ -33,7 +33,7 @@ Tabla de contenido
  - [Algoritmo](#algoritmo)
  - [Base de datos](#base-de-datos)
  - [Aplicación Hosteada](#aplicación-hosteada)
- - [Instalación Local](#instalacion-local)
+ - [Instalación Local](#instalación-local)
  - [Uso de la Api](#uso-de-la-api)
 
 # _Entorno_
@@ -172,7 +172,7 @@ La aplicación se encuentra desplegada en la nube de IBM mediante PaaS, proporci
 El entorno utilzado en la aplicación es el siguiente:
 
  - Runtime : Tomcat 8.0
- - Ram :256MB
+ - Ram : 256MB
  - Core : 1
  - Location : Dallas
  - app-name : api.mutant
@@ -197,8 +197,8 @@ El endpoint de la aplicación es el siguiente > https://mutant-api.mybluemix.net
 ```sh
 gradlew bootRun
 ```
- - La aplicación se ejecutará y se levantara una instancia Tomcat(Embebida)en el puerto 8080
- - Para probar que este to ok puedes consumit el siguiente endpoint http://localhost:8080/api/stats alli tendras una respuesta de las estadisticas actuales de la  api
+ - La aplicación se ejecutará y se levantara una instancia Tomcat(Embebida) en el puerto 8080
+ - Para probar que este todo ok puedes consumir el siguiente endpoint http://localhost:8080/api/stats alli tendras una respuesta de las estadisticas actuales de la  api
 6. Para generar el compilado escribe el siguiente comando:
 ```sh
 gradlew build
@@ -216,9 +216,70 @@ gradlew test
 
 # _Uso de la Api_
 
+De acuerdo a la definición del desafío se requiere disponibilizar dos servicios mediante api, a continuación se describen las propiedades de os servicios expuestos y la forma de consumirlos: 
 
+Existen dos endpoint que puedes consumir el local en caso de ejecutar el punto anterior o el de la nube :
 
+- Endpoint local :  http://localhost:8080
+- Endpoint Servicio Nube : https://mutant-api.mybluemix.net/
 
+## Servicio Verificación ADN
+### Request
+
+Analizar una cadena genetica para determinar si corresponde a un mutante o a un humano :
+
+ - Metodo : `POST` 
+ - Path : `api/mutant`
+ - Content-Type : `Application/Json`
+ - Payload :
+ 
+ ```sh
+    {
+     "dna":["ATGCGA","CAGTGC","TTATGT","AGAAGG","CCCCTA","TCACTG"]
+    }
+ ``` 
+### Response OK
+ - Status Code :  `200`
+ 
+### Response Error 
+
+ #### Forbidden
+Este codígo se responde cuando al analizar la cadena de ADN se encuentra que no corresponde a u mutante si no a un humano.
+ - Status Code : `403` 
+
+  #### Internal Server Error
+Este codígo se responde cuando ocurre algun error en la aplicación , generado entre otros por estructura genetica invalida o problemas con la BD.
+ - Status Code  : `500`
+ 
+## Servicio Estadísticas
+
+### Request
+
+Generar estadisticas relacionadas con el uso de api identificando cadenas genticas analizadas, de humanos y mutantes:
+
+ - Metodo : `GET` 
+ - Path : `api/stats`
+ - Content-Type : `Application/Json`
+ - Data required : `NO`
+ 
+### Response OK
+ - Status Code :  `200`
+ - Payload Response :
+ 
+  
+ ```sh
+   {
+    "count_mutant_dna": 265,
+    "count_human_dna": 256,
+    "ratio": 0
+   }
+ ``` 
+ 
+### Response Error 
+
+  #### Internal Server Error
+Este codígo se responde cuando ocurre algun error en la aplicación.
+ - Status Code  : `500`
 
 
 Markdown is a lightweight markup language based on the formatting conventions
