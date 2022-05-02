@@ -176,7 +176,8 @@ El entorno utilzado en la aplicación desplegada es el siguiente:
  - host-name: mutant-api
  - domain : mybluemix.net
 
-> Nota : esta es la versión maxima proporciaonada por el CSP en el nivel gratuito, mas recursos requererirían costo adicional
+> Nota : esta es la versión maxima proporcionada por el CSP en el nivel gratuito, mas recursos requererirían costo adicional
+> por lo que se realiza la siguiente configuración JAVA_OPTS: '-XX:MaxMetaspaceSize=80780K -Xss512k -Xmx200M -XX:ReservedCodeCacheSize=16M -XX:MaxDirectMemorySize=16M'
 
 El endpoint de la aplicación es el siguiente > https://mutant-api.mybluemix.net/
 
