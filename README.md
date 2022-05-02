@@ -11,14 +11,11 @@
 # Badges
 
 - *Uptime*
-![Uptime Robot status](https://badgen.net/uptime-robot/day/m791608176-6d18823c6ba6d82a5749d08a)
+[![Uptime Robot status](https://badgen.net/uptime-robot/day/m791608176-6d18823c6ba6d82a5749d08a)](https://badgen.net/uptime-robot/day/m791608176-6d18823c6ba6d82a5749d08a)
 - *Quality And Security*
  [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=danialf95_MutantMeli&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=danialf95_MutantMeli)
  - *Response Time* 
-![Uptime Robot status](https://badgen.net/uptime-robot/response/m791608176-6d18823c6ba6d82a5749d08a)
-
-- *Perfromance And Stress Test* 
-[![CoverStatus](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
+[![Uptime Robot status](https://badgen.net/uptime-robot/response/m791608176-6d18823c6ba6d82a5749d08a)](https://badgen.net/uptime-robot/response/m791608176-6d18823c6ba6d82a5749d08a)
 
 # _Introducción_
 
@@ -108,7 +105,7 @@ Test-Automáticos, Code coverage > 80%.
 
 # _Solución_
 
-La solución trabajada se pensó, buscando la forma más óptima en la cual se pudiera recorrer la matriz con la menor complejidad posible, buscando el patrón descrito en el desafío, para ello se trabajó en dos conceptos en los cuales se basó el análisis, diseño e implementación del algoritmo:
+La solución trabajada se pensó buscando la forma más óptima en la cual se pudiera recorrer la matriz con la menor complejidad posible, buscando el patrón descrito en el desafío, para ello se trabajó en dos conceptos en los cuales se basó el análisis, diseño e implementación del algoritmo:
 
 >  - Divide y Venceras.
     - Se fragmento el desafío original en problemas más pequeños, donde se buscó dividir las búsquedas de patrones en métodos específicos para cada dirección, cada método se encargara de abstraer el problema y la solución. Con ello en vez de hacer recorridos innecesarios, se identifica la dirección de búsqueda donde existe una posibilidad de encontrar el patrón y se le cede la búsqueda del patrón al método que de acuerdo a la dirección está en la capacidad de buscar el patrón mediante recursión.
@@ -119,7 +116,7 @@ La solución trabajada se pensó, buscando la forma más óptima en la cual se p
 ```
 > Este método retorna un booleano indicando si en la dirección donde se presume hay coincidencia se encontró el patrón esperado o no, la búsqueda  se realiza solo sobre los campos del array de los cuales sospechamos hay coincidencia, y no tenemos que recorrer todo el array mediante un for u otro tipo de iterador que puede aumentar la complejidad algorítmica. Por ejemplo en caso de que en la búsqueda se encuentre un carácter que daña el patrón, se acaba la recursión y no seguimos buscando en esa dirección.
 
-De cara a la implementación del desarrollo se trabajó de la mano de 2 patrones de diseño que facilitaron la implementación del algoritmo, adicionalmente estos patrones permiten que la aplicación sea escalable, adaptable, y fácilmente testeable :
+De cara a la implementación del desarrollo se trabajó de la mano de 2 patrones de diseño que facilitaron la implementación del algoritmo, adicionalmente estos patrones permiten que la aplicación sea escalable, adaptable y fácilmente testeable :
 
 
    - [SOLID](https://profile.es/blog/principios-solid-desarrollo-software-calidad/)
@@ -169,7 +166,7 @@ ALTER TABLE test.logauditadn ADD PRIMARY KEY (id);
 
 La aplicación se encuentra desplegada en la nube de IBM mediante PaaS, proporcionada por cloud foundry.
 
-El entorno utilzado en la aplicación es el siguiente:
+El entorno utilzado en la aplicación desplegada es el siguiente:
 
  - Runtime : Tomcat 8.0
  - Ram : 256MB
@@ -178,6 +175,8 @@ El entorno utilzado en la aplicación es el siguiente:
  - app-name : api.mutant
  - host-name: mutant-api
  - domain : mybluemix.net
+
+> Nota : esta es la versión maxima proporciaonada por el CSP en el nivel gratuito, mas recursos requererirían costo adicional
 
 El endpoint de la aplicación es el siguiente > https://mutant-api.mybluemix.net/
 
@@ -283,14 +282,9 @@ Este codígo se responde cuando ocurre algun error en la aplicación.
 
 ## Postman
 
-Adicionalmente se carga al repositorio una collecion de Postman por si se desea consumir la api hosteada :
+Adicionalmente se carga al repositorio una colleción de Postman por si se desea consumir la api hosteada :
  
  - [Postman](https://github.com/danialf95/MutantMeli/blob/master/postman/Meli.postman_collection.json)
-
-
-Markdown is a lightweight markup language based on the formatting conventions
-that people naturally use in email.
-As [John Gruber] writes on the [Markdown site][df1]
 
 
 
