@@ -20,7 +20,7 @@ public class LogAuditAdn {
 	Integer Identifier;
 	
 	@Column(name = "input_data")
-	String Request;
+	String request;
 	@Column(name = "verification")
 	boolean status;
 	@Column(name = "time")
@@ -33,7 +33,7 @@ public class LogAuditAdn {
 	public LogAuditAdn(Integer identifier, String request, boolean status, Timestamp time) {
 		super();
 		Identifier = identifier;
-		Request = request;
+		this.request = request;
 		this.status = status;
 		this.time = time;
 	}
@@ -45,10 +45,10 @@ public class LogAuditAdn {
 		Identifier = identifier;
 	}
 	public String getRequest() {
-		return Request;
+		return request;
 	}
 	public void setRequest(String request) {
-		Request = request;
+		this.request = request;
 	}
 	public boolean getResponse() {
 		return status;
